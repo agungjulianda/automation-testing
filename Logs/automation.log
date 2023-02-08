@@ -201,3 +201,7 @@ Ok
 2023-02-07 13:36:40,727 - root - ERROR - ***** INVALID TEST DATA
 2023-02-07 13:36:40,727 - root - ERROR - ***** INVALID TEST DATA
 2023-02-07 13:36:40,727 - root - ERROR - ***** INVALID TEST DATA
+2023-02-08 16:17:19,117 - root - INFO - ***** Test Test_006_Delete Connected Account
+2023-02-08 16:17:19,117 - root - INFO - ***** Verifying Delete Connected Account 
+2023-02-08 16:17:56,655 - root - ERROR - ***** Delete Connected Account Failed 
+2023-02-08 16:17:56,655 - root - ERROR - ***** Delete Connected Account Failde : Test Data Invalid 
