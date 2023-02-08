@@ -17,6 +17,7 @@ class DCM:
     con_acc_xpath = "//*[@id='holder']/card-view/div[1]/div/div[4]/div/div/div/div/div[3]/div/div[1]"
     dltbtn_xpath = "//*[@class='arrowimg']" 
     okbtn_xpath = "//*[@class='btn btn-primary lanjut-btn ok']"
+    addacc_xpath = "//*[@class='btn btn-primary lanjut-btn ok']"
  
 
     def __init__(self,driver):
@@ -74,9 +75,13 @@ class DCM:
         while(deletacc_xpath == None):
             deletacc_xpath = WebDriverWait(self.driver, 5).until( EC.presence_of_element_located((By.XPATH, self.dltbtn_xpath)))
         
+    def clickonaddAccount(self):
+        addacc_xpath = None
+        while(addacc_xpath == None):
+            addacc_xpath = WebDriverWait(self.driver, 5).until( EC.presence_of_element_located((By.XPATH, self.addacc_xpath)))
         
         time.sleep(5)
-        deletacc_xpath.click()  
+        addacc_xpath.click()  
 
     def clickonOkbutton(self):
         okbtn_xpath = None

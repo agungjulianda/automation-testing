@@ -35,3 +35,9 @@ class readConfig:
         carnumber = cofig.get('common info','cardNumber')
 
         return carnumber
+
+    @staticmethod
+    def getAccoutNumberCNA():
+        accountNumber = cofig.get('cna info','accountnumber')
+
+        return accountNumber

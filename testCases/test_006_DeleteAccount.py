@@ -4,6 +4,7 @@ from pageObjects.LoginPage import Login
 from pageObjects.DcmPage import DCM 
 from pageObjects.ErrorMessage import ErrorCatch
 from pageObjects.OTPPage import OTP
+from pageObjects.linkaccountPage import LCA
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -33,6 +34,7 @@ class Test_004_ConnectNewAccounts:
         self.ec = ErrorCatch(self.driver)
         self.dcm = DCM(self.driver)
         self.otp = OTP(self.driver)
+        self.lca = LCA(self.driver)
 
         try:
             #self.rows = excelUtils.getRowCount(self.path , 'Sheet1')
@@ -60,7 +62,7 @@ class Test_004_ConnectNewAccounts:
                 
 
             else:
-                self.dcm.clickonDeleteAcc()
+                self.lca.clickonDeleteAcc()
                 time.sleep(3)
                 self.otp.setOTP(self.def_otp)
                 self.otp.clickonSubmit()

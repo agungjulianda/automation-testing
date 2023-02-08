@@ -2,8 +2,13 @@ import pytest
 from selenium import webdriver
 from pageObjects.LoginPage import Login
 from pageObjects.DcmPage import DCM 
+from pageObjects.linkaccountPage import LCA
 from pageObjects.ErrorMessage import ErrorCatch
 from pageObjects.OTPPage import OTP
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
 
 import time
 from Utilities.readProperties import readConfig
@@ -30,6 +35,7 @@ class Test_004_ConnectNewAccounts:
         self.ec = ErrorCatch(self.driver)
         self.dcm = DCM(self.driver)
         self.otp = OTP(self.driver)
+        self.lca = LCA(self.driver)
 
         try:
             #self.rows = excelUtils.getRowCount(self.path , 'Sheet1')
@@ -45,14 +51,43 @@ class Test_004_ConnectNewAccounts:
             self.dcm.clickonProfile()
             self.dcm.clickonDCM()
             self.dcm.clickonCard()
-            self.dcm.clickonConAcc()
-            
+            self.lca.clickonConAcc()
             time.sleep(3)
+            self.account1 = len(self.driver.find_elements(By.CLASS_NAME,"card"))
+            self.lca.clickonaddAccount()
+            #self.lca.clickonDropdown()
+            #self.lca.sellectAccount()
+            self.lca.checktncBox()
+            self.lca.clickonNextCNA()
+            time.sleep(3)
+            self.otp.setOTP(self.def_otp)
+            self.otp.clickonSubmit()
+            time.sleep(3)
+            self.driver.save_screenshot(".\\Screenshots\\ConnectNewAccount\\"+"ConnectNewAccountAccount_Pass_1.png")
+            self.dcm.clickonOkbutton()
+            self.dcm.clickonCard()
+            self.dcm.clickonConAcc()
+            time.sleep(3)
+            account2 = len(self.driver.find_elements(By.CLASS_NAME,"card"))
+            time.sleep(3)
+
+            if self.account1 < account2:
+                self.logger.info("***** Connect New Account Account Passed ")
+                self.driver.save_screenshot(".\\Screenshots\\ConnectNewAccount\\"+"ConnectNewAccountAccount_Pass_2.png")
+                self.driver.close()
+                assert True
+            
+            else:
+                self.logger.error("***** Delete Connected Account Failed ")
+                self.driver.save_screenshot(".\\Screenshots\\ConnectNewAccount\\"+"ConnectNewAccountAccount_Fail.png")
+                self.driver.close()
+                assert False
         
         except:
             
             error_mes = self.ec.getErrorMessage()
-            self.logger.error("***** Connect New Account Failed ")
+            self.logger.error("***** Delete Connected Account Failed ")
+            self.driver.save_screenshot(".\\Screenshots\\ConnectNewAccount\\"+"ConnectNewAccountAccount.png")
             self.logger.error(error_mes)
             self.driver.close()
             time.sleep(3)
