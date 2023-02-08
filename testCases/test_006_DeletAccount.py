@@ -53,7 +53,7 @@ class Test_004_ConnectNewAccounts:
             self.account1 = len(self.driver.find_elements(By.CLASS_NAME,"card"))
             if self.account1 == 1:
                 self.logger.error("***** Delete Connected Account Failed ")
-                self.logger.error("***** CONNECT ACCOUNT TESTDATA INVALID")
+                self.logger.error("***** Delete Connected Account Failde : Test Data Invalid ")
                 self.driver.close()
                 assert False
                 
