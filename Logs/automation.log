@@ -205,3 +205,17 @@ Ok
 2023-02-08 16:17:19,117 - root - INFO - ***** Verifying Delete Connected Account 
 2023-02-08 16:17:56,655 - root - ERROR - ***** Delete Connected Account Failed 
 2023-02-08 16:17:56,655 - root - ERROR - ***** Delete Connected Account Failde : Test Data Invalid 
+2023-02-08 16:30:59,944 - root - INFO - ***** Test Test_006_Delete Connected Account
+2023-02-08 16:30:59,944 - root - INFO - ***** Verifying Delete Connected Account 
+2023-02-08 16:31:34,897 - root - ERROR - ***** Delete Connected Account Failed 
+2023-02-08 16:31:34,899 - root - ERROR - ***** Delete Connected Account Failde : Test Data Invalid 
+2023-02-08 16:33:02,850 - root - INFO - ***** Test Test_006_Delete Connected Account
+2023-02-08 16:33:02,850 - root - INFO - ***** Verifying Delete Connected Account 
+2023-02-08 16:33:36,068 - root - ERROR - ***** Delete Connected Account Failed 
+2023-02-08 16:33:36,068 - root - ERROR - ***** Delete Connected Account Failde : Test Data Invalid 
+2023-02-08 16:38:05,829 - root - INFO - ***** Test Test_006_Delete Connected Account
+2023-02-08 16:38:05,829 - root - INFO - ***** Verifying Delete Connected Account 
+2023-02-08 16:39:19,475 - root - INFO - ***** Delete Connected Account Passed 
+2023-02-08 16:41:08,122 - root - INFO - ***** Test Test_006_Delete Connected Account
+2023-02-08 16:41:08,122 - root - INFO - ***** Verifying Delete Connected Account 
+2023-02-08 16:42:21,066 - root - INFO - ***** Delete Connected Account Passed 

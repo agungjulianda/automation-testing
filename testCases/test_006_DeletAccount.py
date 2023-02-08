@@ -54,6 +54,7 @@ class Test_004_ConnectNewAccounts:
             if self.account1 == 1:
                 self.logger.error("***** Delete Connected Account Failed ")
                 self.logger.error("***** Delete Connected Account Failde : Test Data Invalid ")
+                self.driver.save_screenshot(".\\Screenshots\\DeteteAccount"+"DeleteConnecteAccount_Fail.png")
                 self.driver.close()
                 assert False
                 
@@ -64,6 +65,7 @@ class Test_004_ConnectNewAccounts:
                 self.otp.setOTP(self.def_otp)
                 self.otp.clickonSubmit()
                 time.sleep(3)
+                self.driver.save_screenshot(".\\Screenshots\\DeteteAccount\\"+"DeleteConnecteAccount_Pass_1.png")
                 self.dcm.clickonOkbutton()
                 self.dcm.clickonCard()
                 self.dcm.clickonConAcc()
@@ -73,11 +75,13 @@ class Test_004_ConnectNewAccounts:
 
                 if self.account1 > account2:
                     self.logger.info("***** Delete Connected Account Passed ")
+                    self.driver.save_screenshot(".\\Screenshots\\DeteteAccount\\"+"DeleteConnecteAccount_Pass_2.png")
                     self.driver.close()
                     assert True
                 
                 else:
                     self.logger.error("***** Delete Connected Account Failed ")
+                    self.driver.save_screenshot(".\\Screenshots\\DeteteAccount\\"+"DeleteConnecteAccount_Fail.png")
                     self.driver.close()
                     assert False
         
@@ -85,6 +89,7 @@ class Test_004_ConnectNewAccounts:
             
             error_mes = self.ec.getErrorMessage()
             self.logger.error("***** Delete Connected Account Failed ")
+            self.driver.save_screenshot(".\\Screenshots\\DeteteAccount\\"+"DeleteConnecteAccount_Fail.png")
             self.logger.error(error_mes)
             self.driver.close()
             time.sleep(3)
